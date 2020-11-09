@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CompraFacil</string>
+    <string name="search_hint">Buscar productos</string>
+    <string name="precioProducto">12.00</string>
+    <string name="nombreProducto">nombrePrueba</string>
+    <string name="tiendaProducto">tiendaPrueba</string>
+</resources>
