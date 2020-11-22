@@ -37,6 +37,14 @@ dependencies {
 
     //PLAY_SERVICES
     implementation 'com.google.android.gms:play-services-tasks:17.2.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    //LOCATION PLUGIN
+    apply plugin: 'com.google.gms.google-services'
+
+    //FIREBASE
+    implementation 'com.google.firebase:firebase-database:19.5.1'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
 
     //DEFAULT
     implementation fileTree(dir: "libs", include: ["*.jar"])

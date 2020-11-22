@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "721209754476",
+    "firebase_url": "https://comprafacil-d9729.firebaseio.com",
+    "project_id": "comprafacil-d9729",
+    "storage_bucket": "comprafacil-d9729.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721209754476:android:6252ab121cb5f4785da949",
+        "android_client_info": {
+          "package_name": "com.example.comprafacil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721209754476-javvdfcui0omgf8bia2lb90ikkdvfhn6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.comprafacil",
+            "certificate_hash": "281e55123f85daaa1a96d41d70e13f57d1fb2017"
+          }
+        },
+        {
+          "client_id": "721209754476-kkjob0ik4bank247hd0lo6bi4ivdgnqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb3N8oMW65UWVzJazTLZZKJHrNZGq4zww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721209754476-kkjob0ik4bank247hd0lo6bi4ivdgnqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
