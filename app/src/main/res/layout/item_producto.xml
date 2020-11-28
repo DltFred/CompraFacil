@@ -14,28 +14,60 @@
             android:id="@+id/imgItemProducto"
             android:layout_width="match_parent"
             android:layout_height="@dimen/altoImg"
-            android:src="@drawable/ic_launcher_foreground"/>
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="@string/cod_prod" />
+
         <TextView
-            android:id="@+id/txtNombreProducto"
+            android:id="@+id/lblCodigoProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nombreProducto"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/cod_prod"
+            android:textSize="@dimen/fontNombre" />
+
+        <TextView
+            android:id="@+id/lblNombreProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nom_prod"
             android:textSize="@dimen/fontNombre"
             android:layout_gravity="center_horizontal"/>
+
         <TextView
-            android:id="@+id/txtPrecioProducto"
+            android:id="@+id/lblDescripcionProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/precioProducto"
+            android:text="@string/desc_prod"
             android:textSize="@dimen/fontPrecio"
             android:layout_gravity="center_horizontal"/>
         <TextView
-            android:id="@+id/txtTiendaProducto"
+            android:id="@+id/lblMarcaProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tiendaProducto"
+            android:text="@string/marc_prod"
             android:textSize="@dimen/fontPrecio"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/lblContenidoProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cont_prod"
+            android:textSize="@dimen/fontPrecio"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/lblPrecioProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prec_prod"
+            android:textSize="@dimen/fontPrecio"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/lblStockProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="15dp"/>
+            android:text="@string/stk_prod"
+            android:textSize="@dimen/fontPrecio" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
