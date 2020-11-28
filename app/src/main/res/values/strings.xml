@@ -13,4 +13,17 @@
     <string name="contraseña">Contraseña</string>
     <string name="crearCuenta">Crear Cuenta</string>
     <string name="title_activity_maps">Map</string>
+
+    -- String for products
+    <string name="cod_prod">Codigo Producto</string>
+    <string name="nom_prod">Nombre Producto</string>
+    <string name="desc_prod">Descripcion Producto</string>
+    <string name="marc_prod">Marca Producto</string>
+    <string name="cont_prod">Contenido Producto</string>
+    <string name="prec_prod">Precio Producto</string>
+    <string name="stk_prod">Stock Producto</string>
+
+    -- Botones
+    <string name="btn_CrearProducto">Crear Producto</string>
+
 </resources>
