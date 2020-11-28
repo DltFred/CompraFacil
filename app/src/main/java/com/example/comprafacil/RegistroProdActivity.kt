@@ -7,10 +7,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegistroProdActivity : AppCompatActivity() {
 
@@ -22,8 +19,7 @@ class RegistroProdActivity : AppCompatActivity() {
     private lateinit var txtPrecioProducto:EditText
     private lateinit var txtStock:EditText
     private lateinit var progressBar: ProgressBar
-    private lateinit var dbReference: DatabaseReference
-    private lateinit var database: FirebaseDatabase
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +35,8 @@ class RegistroProdActivity : AppCompatActivity() {
 
         progressBar= findViewById(R.id.progressBar)
 
-        database= FirebaseDatabase.getInstance()
-        println(database)
-
-        dbReference=database.reference.child("Products")
-
+        db= FirebaseFirestore.getInstance()
+        println(db)
     }
 
     fun register(view:View) {
@@ -62,16 +55,23 @@ class RegistroProdActivity : AppCompatActivity() {
         if(!TextUtils.isEmpty(codigo) && !TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(descripcion) && !TextUtils.isEmpty(marca) && !TextUtils.isEmpty(contenido) && !TextUtils.isEmpty(precio) && !TextUtils.isEmpty(stock)) {
             progressBar.visibility=View.VISIBLE
 
-            val products = null
-            val userBD=dbReference.child(products?.category.toString())
-
-            userBD.child("Codigo").setValue(codigo)
-            userBD.child("Nombre").setValue(nombre)
-            userBD.child("Descripcion").setValue(descripcion)
-            userBD.child("Marca").setValue(marca)
-            userBD.child("Contenido").setValue(contenido)
-            userBD.child("Precio").setValue(precio)
-            userBD.child("Stock").setValue(stock)
+            val products = hashMapOf(
+                "codigo" to codigo,
+                "contenido" to contenido,
+                "descripcion" to descripcion,
+                "marca" to marca,
+                "nombre" to nombre,
+                "precio" to precio,
+                "stock" to stock
+            )
+            db.collection("products")
+                .add(products)
+                .addOnSuccessListener { documentReference ->
+                    println("Producto registrado")
+                }
+                .addOnFailureListener { e ->
+                    println("Error al agregar producto $e")
+                }
             action()
 
         }

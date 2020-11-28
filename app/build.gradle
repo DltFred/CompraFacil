@@ -43,7 +43,7 @@ dependencies {
     apply plugin: 'com.google.gms.google-services'
 
     //FIREBASE
-    implementation 'com.google.firebase:firebase-database:19.5.1'
+    implementation 'com.google.firebase:firebase-firestore:21.2.1'
     implementation 'com.google.firebase:firebase-auth:20.0.1'
 
     //DEFAULT

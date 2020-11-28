@@ -10,8 +10,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegistrarActivity : AppCompatActivity() {
 
@@ -20,8 +19,7 @@ class RegistrarActivity : AppCompatActivity() {
     private lateinit var txtEmail:EditText
     private lateinit var txtPassword:EditText
     private lateinit var progressBar: ProgressBar
-    private lateinit var dbReference:DatabaseReference
-    private lateinit var database:FirebaseDatabase
+    private lateinit var database:FirebaseFirestore
     private lateinit var auth:FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,10 +33,10 @@ class RegistrarActivity : AppCompatActivity() {
 
         progressBar=findViewById(R.id.progressBar)
 
-        database= FirebaseDatabase.getInstance()
+        database= FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
 
-        dbReference=database.reference.child("User")
+
     }
 
     fun register(view: View) {
@@ -62,10 +60,19 @@ class RegistrarActivity : AppCompatActivity() {
                         val user:FirebaseUser?=auth.currentUser
                         verifyEmail(user)
 
-                        val userBD=dbReference.child(user?.uid.toString())
-
-                        userBD.child("Name").setValue(name)
-                        userBD.child("lastName").setValue(lastName)
+                        val userBD= hashMapOf(
+                            "email" to user.toString(),
+                            "nombre" to name,
+                            "apellido" to lastName
+                        )
+                        database.collection("users")
+                            .add(userBD)
+                            .addOnSuccessListener { documentReference ->
+                                println("Usuario registrado")
+                            }
+                            .addOnFailureListener { e ->
+                                println("Error al agregar Usuario $e")
+                            }
                         action()
                     }
                 }
