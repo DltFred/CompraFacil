@@ -61,7 +61,7 @@ class RegistrarActivity : AppCompatActivity() {
                         verifyEmail(user)
 
                         val userBD= hashMapOf(
-                            "email" to user.toString(),
+                            "email" to email,
                             "nombre" to name,
                             "apellido" to lastName
                         )
