@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -61,6 +62,17 @@ class RegistroProdActivity : AppCompatActivity() {
         if(!TextUtils.isEmpty(codigo) && !TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(descripcion) && !TextUtils.isEmpty(marca) && !TextUtils.isEmpty(contenido) && !TextUtils.isEmpty(precio) && !TextUtils.isEmpty(stock)) {
             progressBar.visibility=View.VISIBLE
 
+            val products = null
+            val userBD=dbReference.child(products?.category.toString())
+
+            userBD.child("Codigo").setValue(codigo)
+            userBD.child("Nombre").setValue(nombre)
+            userBD.child("Descripcion").setValue(descripcion)
+            userBD.child("Marca").setValue(marca)
+            userBD.child("Contenido").setValue(contenido)
+            userBD.child("Precio").setValue(precio)
+            userBD.child("Stock").setValue(stock)
+            action()
 
         }
     }
