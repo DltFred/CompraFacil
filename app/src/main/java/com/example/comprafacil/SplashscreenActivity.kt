@@ -1,4 +1,4 @@
-package com.example.comprafacil.ui.activities
+package com.example.comprafacil
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

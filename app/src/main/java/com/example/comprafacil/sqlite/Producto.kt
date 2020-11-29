@@ -7,7 +7,7 @@ import java.text.DecimalFormat
 
 @Entity(tableName = "tabla_producto")
 class Producto(
-    @PrimaryKey @ColumnInfo(name="codigo") val cod_prod: String,
+    @PrimaryKey @ColumnInfo(name="codigo") var cod_prod: String,
     @ColumnInfo(name="nombre") val nom_prod: String,
     @ColumnInfo(name="descripcion") val desc_prod: String,
     @ColumnInfo(name="marca") val marc_prod: String,

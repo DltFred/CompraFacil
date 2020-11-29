@@ -2,7 +2,6 @@ package com.example.comprafacil.sqlite
 
 import androidx.room.*
 
-import androidx.room.*
 
 @Dao
 interface ProductoDAO {
@@ -17,4 +16,5 @@ interface ProductoDAO {
 
     @Delete
     fun eliminarProducto(producto: Producto)
+
 }
