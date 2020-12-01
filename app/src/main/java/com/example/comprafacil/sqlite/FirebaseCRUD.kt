@@ -5,12 +5,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 class FirebaseCRUD {
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    fun listarProductos(): ArrayList<Producto> {
-        var lista = ArrayList<Producto>()
+    fun listarProductos(resultado: (ArrayList<Producto>) -> Unit) {
+
 
         db.collection("products")
             .get()
             .addOnSuccessListener { result ->
+                var lista = ArrayList<Producto>()
                 for (document in result) {
                     println("${document.id} => ${document.data}")
                     val producto: Producto = Producto(
@@ -24,11 +25,12 @@ class FirebaseCRUD {
                     )
                     lista.add(producto)
                 }
+                resultado(lista)
             }
             .addOnFailureListener { exception ->
                 println("Error getting documents:  $exception")
             }
-        return lista
+
     }
 
 }
